@@ -4,14 +4,23 @@ A full-stack task management application for teams, featuring role-based access 
 
 ## 📸 Screenshots
 
-### 📊 Dashboard Overview
-![Dashboard](docs/screenshots/dashboard.png)
+### 🔑 Authentication
+| Login | Signup |
+|-------|--------|
+| ![Login](screenshots/login.png) | ![Signup](screenshots/signup.png) |
 
-### 📂 Project Details & Task Management
-![Project Details](docs/screenshots/project_details.png)
+### 📊 Dashboard & Projects
+| Dashboard | Create Project |
+|-----------|----------------|
+| ![Dashboard](screenshots/dashboard.png) | ![Create Project](screenshots/create_project.png) |
+
+### 📂 Task Management
+| Project Details | Create Task | Add Member |
+|-----------------|-------------|------------|
+| ![Project Details](screenshots/project_details.png) | ![Create Task](screenshots/create_task.png) | ![Add Member](screenshots/add_member.png) |
 
 ### 🎥 Live Demo
-![Demo](docs/screenshots/demo.webp)
+![Demo](screenshots/demo.webp)
 
 ## 🚀 Features
 
