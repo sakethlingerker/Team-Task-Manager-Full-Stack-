@@ -19,8 +19,8 @@ A full-stack task management application for teams, featuring role-based access 
 |-----------------|-------------|------------|
 | ![Project Details](screenshots/project_details.png) | ![Create Task](screenshots/create_task.png) | ![Add Member](screenshots/add_member.png) |
 
-### 🎥 Live Demo
-![Demo](screenshots/demo.webp)
+### 🎥 Application Walkthrough
+![Walkthrough](screenshots/walkthrough.webp)
 
 ## 🚀 Features
 
