@@ -28,7 +28,7 @@ A full-stack task management application for teams, featuring role-based access 
 
 ### 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone <https://github.com/sakethlingerker/Team-Task-Manager-Full-Stack-.git>
 cd team-task-manager
 ```
 
