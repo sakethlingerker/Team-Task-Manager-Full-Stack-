@@ -19,9 +19,6 @@ A full-stack task management application for teams, featuring role-based access 
 |-----------------|-------------|------------|
 | ![Project Details](screenshots/project_details.png) | ![Create Task](screenshots/create_task.png) | ![Add Member](screenshots/add_member.png) |
 
-### 🎥 Application Walkthrough
-![Walkthrough](screenshots/walkthrough.webp)
-
 ## 🚀 Features
 
 - **Authentication**: Secure JWT-based login and signup with password hashing.
