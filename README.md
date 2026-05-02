@@ -12,13 +12,35 @@ A full-stack task management application for teams, featuring role-based access 
 - **Task Management**: Create, assign, and track tasks with status and due dates.
 - **Dashboard**: Visual overview of total tasks, tasks by status, and overdue alerts.
 
-## 🛠️ Tech Stack
+## 🚀 Deployment (Railway Single-Service)
 
-- **Frontend**: React, Vite, Axios, React Router, Lucide Icons.
-- **Backend**: Node.js, Express.
-- **Database**: MongoDB (Mongoose).
-- **Authentication**: JWT, BcryptJS.
-- **Styling**: Vanilla CSS (Modern Design System).
+This project is configured as a monorepo that deploys both Frontend and Backend as a **single service**.
+
+### 1. Railway Configuration
+- Connect your GitHub repository.
+- **Root Directory**: Leave empty (Root).
+- **Environment Variables**:
+  - `MONGO_URI`: Your MongoDB Atlas connection string.
+  - `JWT_SECRET`: A secret key for tokens.
+  - `PORT`: `5000`
+  - `NIXPACKS_NODE_VERSION`: `22`
+
+### 2. Manual Setup
+If running locally:
+```bash
+# Install all dependencies (Workspaces)
+npm install
+
+# Start development servers
+npm run dev -w frontend
+npm run dev -w backend
+```
+
+## 🛠️ Tech Stack
+- **Frontend**: React, Vite, Axios, Lucide-React
+- **Backend**: Node.js, Express, Mongoose
+- **Database**: MongoDB Atlas
+- **Auth**: JWT & Bcryptjs
 
 ## 📦 Setup Instructions
 
