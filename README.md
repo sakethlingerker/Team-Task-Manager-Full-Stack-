@@ -1,6 +1,17 @@
-# Team Task Manager
+# Team Task Manager 🚀
 
-A full-stack task management application for teams, featuring role-based access control, project management, and a real-time dashboard.
+A full-stack task management application for teams, featuring role-based access control, project management, and a real-time dashboard. Built with a premium dark-themed design system.
+
+## 📸 Screenshots
+
+### 📊 Dashboard Overview
+![Dashboard](docs/screenshots/dashboard.png)
+
+### 📂 Project Details & Task Management
+![Project Details](docs/screenshots/project_details.png)
+
+### 🎥 Live Demo
+![Demo](docs/screenshots/demo.webp)
 
 ## 🚀 Features
 
