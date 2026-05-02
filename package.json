@@ -1,0 +1,7 @@
+{
+  "name": "team-task-manager-root",
+  "private": true,
+  "engines": {
+    "node": "20"
+  }
+}
