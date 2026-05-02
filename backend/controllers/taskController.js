@@ -79,32 +79,37 @@ const updateTask = async (req, res) => {
 // @route   GET /api/tasks/dashboard
 // @access  Private
 const getDashboardStats = async (req, res) => {
-  // Get tasks where user is involved
-  const userProjects = await Project.find({
-    $or: [{ createdBy: req.user.id }, { members: req.user.id }],
-  }).select('_id');
+  try {
+    // Get projects where user is involved
+    const userProjects = await Project.find({
+      $or: [{ createdBy: req.user.id }, { members: req.user.id }],
+    }).select('_id');
 
-  const projectIds = userProjects.map(p => p._id);
+    const projectIds = userProjects.map(p => p._id);
 
-  const tasks = await Task.find({ project: { $in: projectIds } });
+    const tasks = await Task.find({ project: { $in: projectIds } });
 
-  const totalTasks = tasks.length;
-  const statusCounts = {
-    todo: tasks.filter(t => t.status === 'todo').length,
-    'in-progress': tasks.filter(t => t.status === 'in-progress').length,
-    done: tasks.filter(t => t.status === 'done').length,
-  };
+    const totalTasks = tasks.length;
+    const statusCounts = {
+      todo: tasks.filter(t => t.status === 'todo').length,
+      'in-progress': tasks.filter(t => t.status === 'in-progress').length,
+      done: tasks.filter(t => t.status === 'done').length,
+    };
 
-  const overdueTasks = tasks.filter(t => 
-    t.status !== 'done' && t.dueDate && new Date(t.dueDate) < new Date()
-  ).length;
+    const overdueTasks = tasks.filter(t => 
+      t.status !== 'done' && t.dueDate && new Date(t.dueDate) < new Date()
+    ).length;
 
-  res.status(200).json({
-    totalTasks,
-    statusCounts,
-    overdueTasks,
-    recentTasks: tasks.slice(-5).reverse()
-  });
+    res.status(200).json({
+      totalTasks,
+      statusCounts,
+      overdueTasks,
+      recentTasks: tasks.slice(-5).reverse()
+    });
+  } catch (error) {
+    console.error('[DASHBOARD ERROR]', error);
+    res.status(500).json({ message: 'Error fetching dashboard stats' });
+  }
 };
 
 module.exports = {
