@@ -22,9 +22,22 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/projects', require('./routes/projectRoutes'));
 app.use('/api/tasks', require('./routes/taskRoutes'));
 
-// Basic health check
-app.get('/', (req, res) => {
+// --- Frontend Integration ---
+const path = require('path');
+const frontendDist = path.join(__dirname, '../frontend/dist');
+
+// Serve static files from the React app
+app.use(express.static(frontendDist));
+
+// Basic health check (Keep this before the wildcard)
+app.get('/health', (req, res) => {
   res.send('API is running...');
+});
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendDist, 'index.html'));
 });
 
 // Error handler middleware (basic)
