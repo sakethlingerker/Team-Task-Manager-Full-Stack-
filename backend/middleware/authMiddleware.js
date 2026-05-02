@@ -18,9 +18,11 @@ const protect = async (req, res, next) => {
       // Get user from the token
       req.user = await User.findById(decoded.id).select('-password');
 
+      console.log(`[AUTH DEBUG] Path: ${req.path}, User: ${req.user.email}, Role: ${req.user.role}`);
+
       next();
     } catch (error) {
-      console.error(error);
+      console.error('[AUTH ERROR]', error);
       res.status(401).json({ message: 'Not authorized' });
     }
   }
@@ -34,6 +36,7 @@ const admin = (req, res, next) => {
   if (req.user && req.user.role === 'Admin') {
     next();
   } else {
+    console.warn(`[ADMIN DENIED] User: ${req.user ? req.user.email : 'None'}, Role: ${req.user ? req.user.role : 'None'}`);
     res.status(403).json({ message: 'Not authorized as an admin' });
   }
 };

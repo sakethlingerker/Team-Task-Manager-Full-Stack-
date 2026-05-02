@@ -89,9 +89,6 @@ VITE_API_URL=http://localhost:5000/api
 npm run dev
 ```
 
-## 📝 Credentials (if seeded)
-- **Admin**: `admin@example.com` / `password123`
-- **Member**: `john@example.com` / `password123`
 
 ## 📄 License
 This project is for educational purposes.
