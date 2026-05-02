@@ -31,7 +31,7 @@ app.use(express.static(frontendDist));
 
 // Basic health check (Keep this before the wildcard)
 app.get('/health', (req, res) => {
-  res.send('API is running...');
+  res.status(200).send('OK');
 });
 
 // The "catchall" handler: for any request that doesn't
